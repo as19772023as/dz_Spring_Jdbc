@@ -1,25 +1,19 @@
 package ru.strebkov.dz_Spring_Jdbc.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 
-//@Data
-//@AllArgsConstructor
 public class Customers {
     private int id;
     private String name;
     private String surname;
     private int age;
-    private String phone_namber;
+    private String phoneNamber;
 
-   // public Customers(){}
-
-    public Customers(int id, String name, String surname, int age, String phone_namber) {
+    public Customers(int id, String name, String surname, int age, String phoneNamber) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.age = age;
-        this.phone_namber = phone_namber;
+        this.phoneNamber = phoneNamber;
     }
 
     public int getId() {
@@ -38,12 +32,12 @@ public class Customers {
         this.name = name;
     }
 
-    public String getSurename() {
+    public String getSurname() {
         return surname;
     }
 
-    public void setSurename(String surename) {
-        this.surname = surename;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public int getAge() {
@@ -55,11 +49,11 @@ public class Customers {
     }
 
     public String getPhoneNamber() {
-        return phone_namber;
+        return phoneNamber;
     }
 
-    public void setPhoneNamber(String phone_namber) {
-        this.phone_namber = phone_namber;
+    public void setPhoneNamber(String phoneNamber) {
+        this.phoneNamber = phoneNamber;
     }
 
     @Override
@@ -67,9 +61,9 @@ public class Customers {
         return "Customers{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", surename='" + surname + '\'' +
+                ", surname='" + surname + '\'' +
                 ", age=" + age +
-                ", phone_namber='" + phone_namber + '\'' +
+                ", phoneNamber='" + phoneNamber + '\'' +
                 '}';
     }
 }

@@ -1,4 +1,4 @@
-SELECT product_name
-FROM netology.orders
-         JOIN netology.customers ON customer_id = id
-WHERE LOWER(customers.name) = ':name';
+select o.product_name
+from netology.customers c join netology.orders o
+on c.id = o.order_id
+where lower(name)=lower(:name);
