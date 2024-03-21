@@ -5,7 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ru.strebkov.dz_Spring_Jdbc.model.Customers;
-import ru.strebkov.dz_Spring_Jdbc.repository.RepositoryJdbc;
+import ru.strebkov.dz_Spring_Jdbc.repository.RepositoryInterface;
+
 
 import java.util.List;
 
@@ -13,7 +14,7 @@ import java.util.List;
 @RestController
 public class ControllerJdbc {
 
-    private RepositoryJdbc repository;
+    private RepositoryInterface repository;
 
     @GetMapping("/products/fetch-product")
     public List<String> getProductName(@RequestParam(value = "name", required = false) String name) {

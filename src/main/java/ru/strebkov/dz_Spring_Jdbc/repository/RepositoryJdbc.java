@@ -17,7 +17,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Repository
-public class RepositoryJdbc {
+public class RepositoryJdbc implements RepositoryInterface {
 
     @Autowired
     private DataSource dataSource;
@@ -31,13 +31,14 @@ public class RepositoryJdbc {
         this.namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
     }
 
-
+    @Override
     public List<String> getProductName(String name) {
         final String sql = read(myScriptFileName1);
         System.out.println(namedParameterJdbcTemplate.queryForList(sql, Map.of("name", name), String.class));
         return namedParameterJdbcTemplate.queryForList(sql, Map.of("name", name), String.class);
     }
 
+    @Override
     public List<Customers> getAllElementsName(String name) {
         final String sql1 = read(myScriptFileName2);
         Map<String, Object> params = new HashMap<>();
