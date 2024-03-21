@@ -5,7 +5,8 @@ import ru.strebkov.dz_Spring_Jdbc.model.Customers;
 import java.util.List;
 
 public interface RepositoryInterface {
-     List<String> getProductName(String name);
+    List<String> getProductName(String name);
+
     List<Customers> getAllElementsName(String name);
 
 }
