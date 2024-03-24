@@ -1,69 +1,37 @@
 package ru.strebkov.dz_Spring_Jdbc.model;
 
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.ToString;
 
+import java.util.List;
+
+@AllArgsConstructor
+@Data
+@Builder
+@ToString
+@Entity
 public class Customers {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "customers_id", nullable = false)
+    private long customersId;
+
+    @Column(length = 50, nullable = false)
     private String name;
+
+    @Column(length = 100, nullable = false)
     private String surname;
+
+    @Column(nullable = false)
     private int age;
+
+    @Column(name = "phone_namber", length = 25)
     private String phoneNamber;
 
-    public Customers(int id, String name, String surname, int age, String phoneNamber) {
-        this.id = id;
-        this.name = name;
-        this.surname = surname;
-        this.age = age;
-        this.phoneNamber = phoneNamber;
-    }
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customers")
+    private List<Orders> orders;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getPhoneNamber() {
-        return phoneNamber;
-    }
-
-    public void setPhoneNamber(String phoneNamber) {
-        this.phoneNamber = phoneNamber;
-    }
-
-    @Override
-    public String toString() {
-        return "Customers{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", age=" + age +
-                ", phoneNamber='" + phoneNamber + '\'' +
-                '}';
-    }
 }

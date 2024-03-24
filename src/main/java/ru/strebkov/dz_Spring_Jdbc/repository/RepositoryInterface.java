@@ -7,6 +7,4 @@ import java.util.List;
 public interface RepositoryInterface {
     List<String> getProductName(String name);
 
-    List<Customers> getAllElementsName(String name);
-
 }
