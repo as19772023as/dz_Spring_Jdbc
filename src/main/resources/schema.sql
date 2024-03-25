@@ -1,4 +1,4 @@
---create schema if not exists netology_liquibase;
+create schema if not exists netology_liquibase;
 
 create table netology_liquibase.customers
 (
