@@ -11,12 +11,12 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/products/fetch-product")
+@RequestMapping("/products")
 public class ControllerJdbc {
 
     private RepositoryInterface repository;
 
-    @GetMapping
+    @GetMapping("/fetch-product")
     public List<String> getProductName(@RequestParam(value = "name", required = false) String name) {
         return repository.getProductName(name);
     }
