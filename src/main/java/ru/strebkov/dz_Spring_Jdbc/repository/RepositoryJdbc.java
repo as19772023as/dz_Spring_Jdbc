@@ -23,8 +23,8 @@ public class RepositoryJdbc implements RepositoryInterface {
     private DataSource dataSource;
     @Autowired
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
-    private String myScriptFileName1 = "script1.sql";
-    private String myScriptFileName2 = "script2.sql";
+    private String myScriptFileName1 = "static/script1.sql";
+    private String myScriptFileName2 = "static/script2.sql";
 
     public RepositoryJdbc(DataSource dataSource) {
         this.namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(dataSource);

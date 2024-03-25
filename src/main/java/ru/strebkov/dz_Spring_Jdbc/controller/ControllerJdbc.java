@@ -1,6 +1,6 @@
 package ru.strebkov.dz_Spring_Jdbc.controller;
 
-import lombok.AllArgsConstructor;
+import lombok.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
